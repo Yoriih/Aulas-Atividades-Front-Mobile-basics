@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 5 - Manipulação de Eventos</title>
+    <!-- <link rel="stylesheet" href="style-aula-5.css"> -->
+</head>
+
+<body style="background-color: black;">
+
+    <h2 style="color: blueviolet;"> Evento onclick :</h2>
+    <button onclick ="mostrarMensagem()">Clique aqui</button>
+    <script>
+        function mostrarMensagem() {
+            alert("Esse é o evento onClick");
+        }
+    </script>
+    <br>
+
+    <h2 style="color: blueviolet;"> Evento onmouseover:</h2>
+    <p style="color: bisque;" onmouseover="mostrarTexto()"
+    onmouseout="esconderTexto()">Passe o mouse aqui!</p>
+    <p style="color: bisque;" id="mensagem">Aqui e um texto padrão que vai ser alterado com o ".innerText"</p>
+    
+    <script style="color: bisque;">
+        function mostrarTexto() {
+            document.getElementById("mensagem").innerText = "Esse é o evento onmouseover, que alterou tbm o texto";
+        }
+        function esconderTexto() {
+            document.getElementById("mensagem").innerText = "";
+        }
+    </script> 
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 5 - Manipulação de Eventos</title>
+    
+</head>
+
+
+<body style="background-color: rgb(174, 189, 255);">
+
+    <h2 style="color: rgba(5, 0, 80, 0.712);"> Exercício<br>
+        01- Crie uma div que, ao passar o mouse, mostre a mensagem "Mouse em cima da div" 
+        e, ao sair, mostre "Mouse saiu da div":</h2>
+
+    <div onmouseover="entra()" onmouseout="sai()" style="height: 100px;
+    border: 1px solid white;">
+
+    <h2 style="">Passe o mouse dentro da DIV</h2>
+
+    <p id="fora"></p>
+
+    </div>
+
+        <script>
+        function entra() {
+            document.getElementById("fora").innerText = "Mouse dentro da div";
+        }
+        function sai() {
+            document.getElementById("fora").innerText = "Mouse fora da div";
+        }
+        </script> 
+    
+    <!-- onchange
+        onkeydown
+        onkeyup
+        proxima aula-->
+</body>

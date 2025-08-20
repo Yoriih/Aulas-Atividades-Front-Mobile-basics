@@ -1,0 +1,12 @@
+p{
+    color: brown
+}
+
+.cor-classe{
+    color: red;
+}
+
+#cor-id{
+    color: pink;
+    background-color: grey;
+}
