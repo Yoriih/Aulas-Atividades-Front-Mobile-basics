@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Aula 6 - Manipulação de Eventos (Continuação)</title>
+        <!-- <link rel="stylesheet" href="style-aula-6.css"> -->
+    </head>
+
+    <!-------------------------------onchange-------------------------------------->
+    <body style="background-color: black;">
+
+        <h2 style="color: whitesmoke;">------------------------| onchange |--------------------------</h2>
+
+        <h3 style="color: whitesmoke;">Aqui temos o uso do 'onchange', dentro do 'select' e usando o 'option' para adicionar valores que serão usados: </h3>
+
+        <select onchange="mostrarEscolha(this.value)">
+            <option value="">Selecione uma opção</option>
+            <option value="Morango">Morango</option>
+            <option value="Uva">Uva</option>
+            <option value="Laranja">Laranja</option>
+            <option value="Abacate">Abacate</option>
+        </select>
+
+        <p id="resultado" style="color: white;"></p>
+
+        <script>
+            function mostrarEscolha(Frutas){
+                document.getElementById("resultado").innerText =
+                "Você escolheu: " + Frutas;
+            }
+        </script>
+
+    <!-----------------------onkeydown | onkeyup ----------------------->
+    
+        <h2 style="color: whitesmoke;">-----------------onkeydown | onkeyup -------------------</h2>
+
+        <h3 style="color: whitesmoke;">Já aqui usamos o 'onkeyup', mas tambem pode usar o 'onkeydown' apenas mudando no código. </h3>
+
+        <input type="text" onkeyup="teclaP(event)" placeholder="Pressione uma tecla">
+
+        <p style="color: white;" id="tecla"></p>
+
+        <script>
+            function teclaP(evento) {
+                document.getElementById("tecla").innerText =
+                "Tecla pressionada: " + evento.key;
+            }
+        </script>
+
+    </body>
+</html>

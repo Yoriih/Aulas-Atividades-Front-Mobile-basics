@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>To Do List</title>
+        <link rel="stylesheet" href="style-projeto.css">
+    </head>
+    <body>
+        <div>
+            <h1 class="style-titulo">Lista de Tarefas</h1>
+        
+   
+        <div class="task-bar">
+            <!--Caixa de texto-->
+            <input type="text" id="tarefaInput" placeholder="Digite uma tarefa">
+            <!--Botão de adicionar tarefa manual-->
+            <button id="addBtn">✔</button>
+            <!--Caixa de pesquisa(filtro de elementos)-->
+            <input type="text" id="pesquisaInput" placeholder="Pesquisar tarefa">
+        </div>
+          
+        <!-- Botão para limpar toda a lista -->
+        <button class="style-limpar" id="clearBtn" class="clear">Clear All</button>
+
+        <!-- Lista onde as tarefas vão aparecer -->
+        <ul id="listaTarefas"></ul>
+
+        <script>
+
+            // Pegamos os elementos do HTML para manipular
+            const input = document.getElementById("tarefaInput");          // Caixa para receber a tarefa digitada
+            const botao = document.getElementById("addBtn");              // Botão de adicionar tarefa manual 
+            const lista = document.getElementById("listaTarefas");       // Lista onde irá as tarefas   
+            const botaoLimpar = document.getElementById("clearBtn");    // Botão de Limpar     
+            const pesquisa = document.getElementById("pesquisaInput"); // Campo de pesquisa
+                                                                                       
+                                                                     
+            window.addEventListener("load", carregarTarefas);       // Carregar tarefas salvas ao abrir a página
+                                                                   
+            pesquisa.addEventListener("input", function () {      
+                const termo = pesquisa.value.toLowerCase();      // texto digitado
+                const tarefas = lista.querySelectorAll("li");   // pega todas as tarefas
+
+                tarefas.forEach(tarefa => {
+                const texto = tarefa.textContent.toLowerCase();
+                // mostra só as que contêm o termo
+                tarefa.style.display = texto.includes(termo) ? "" : "none";
+                });
+            });
+            
+            botao.addEventListener("click", function() { // Quando o botão for clicado
+                const texto = input.value.trim();       // Pegamos o texto digitado
+                
+                if (texto !== "") {                   // Se não estiver vazio
+                adicionarTarefa(texto);
+                input.value = "";                   // Limpamos o campo de texto
+                }
+            }); 
+
+            // Pressionar Enter no campo de input
+            input.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    const texto = input.value.trim();
+                    if (texto !== "") {
+                        adicionarTarefa(texto);
+                        input.value = "";
+                    }
+                }
+            });
+
+            // Função para adicionar tarefa
+            function adicionarTarefa(texto) {
+            
+            // Criamos um novo <li> (item da lista)
+            const li = document.createElement("li"); 
+            li.textContent = texto;
+
+            // Remover ao clicar
+            li.addEventListener("click", function() {
+                li.remove();
+
+            salvarTarefas(); // Atualiza o localStorage
+            });
+            
+            // Adicionamos o <li> dentro da lista
+            lista.appendChild(li);
+
+            salvarTarefas(); // Salva no localStorage
+            }
+
+            // Salvar todas as tarefas no localStorage
+            function salvarTarefas() {
+                const tarefas = [];
+                lista.querySelectorAll("li").forEach(li => {
+                    tarefas.push(li.textContent);
+                });
+                localStorage.setItem("tarefas", JSON.stringify(tarefas));
+            }
+
+            //  Carregar as tarefas do localStorage
+            function carregarTarefas() {
+                const tarefasSalvas = JSON.parse(localStorage.getItem("tarefas")) || [];
+                tarefasSalvas.forEach(texto => adicionarTarefa(texto));
+            }
+
+            // Limpar toda a lista
+            botaoLimpar.addEventListener("click", function() {
+                lista.innerHTML = ""; // Remove todos os <li>
+                localStorage.removeItem("tarefas"); // Apaga do localStorage
+            });
+
+        </script>
+    </body>
+</html>

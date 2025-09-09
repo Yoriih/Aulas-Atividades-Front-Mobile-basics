@@ -1,0 +1,108 @@
+.style-titulo {
+    background: white;              /* Fundo branco para a caixa */
+    padding: 20px 30px;             /* Espaçamento interno (vertical e horizontal) */
+    border-radius: 10px;            /* Bordas arredondadas */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* Sombra suave ao redor */
+    width: 400px;                   /* Largura fixa da caixa */
+    text-align: center;             /* Centraliza o texto dentro da caixa */
+    
+}
+
+body {
+    font-family: Arial, sans-serif; /* Define a fonte usada no site */
+    background: whitesmoke;          /* Cor de fundo da página */
+    color: #333;                    /* Cor do texto padrão */
+    display: flex;                  /* Ativa o flexbox para alinhar */
+    justify-content: center;        /* Centraliza horizontalmente */
+    align-items: center;            /* Centraliza verticalmente */
+    height: 100vh;                  /* Faz ocupar toda a altura da tela */
+    margin: 0;                      /* Remove margens padrão do navegador */
+}
+
+
+#listaTarefas {
+  list-style: none;               /* Remove as bolinhas da lista */
+  padding: 0;                     /* Remove espaço interno padrão */
+}
+
+#listaTarefas li {
+  background: #eee;               /* Fundo cinza claro das tarefas */
+  margin: 5px 0;                  /* Espaço entre uma tarefa e outra */
+  padding: 10px;                  /* Espaçamento interno de cada item */
+  border-radius: 6px;             /* Bordas arredondadas nos itens */
+  cursor: pointer;                /* Mostra a "mãozinha" ao passar o mouse */
+  transition: background 0.3s;    /* Animação suave na troca de cor */
+}
+
+/* Efeito ao passar o mouse */
+#listaTarefas li:hover {
+  background: #ffb3b3;            /* Fica vermelho claro ao passar o mouse */
+}
+
+.style-limpar {
+  background: #d9534f;   /* Vermelho */
+  color: white;          /* Texto branco */
+  border: none;          /* Sem borda */
+  padding: 10px;         /* Espaçamento interno */
+  margin-bottom: 15px;   /* Espaço abaixo do botão */
+  width: 100%;           /* Ocupa toda a largura */
+  border-radius: 6px;    /* Bordas arredondadas */
+  cursor: pointer;       /* Mãozinha ao passar o mouse */
+  transition: background 0.3s; /* Efeito suave na troca de cor */
+}
+
+.style-limpar:hover {
+  background: #c9302c;   /* Vermelho mais escuro no hover */
+}
+
+#pesquisaInput {
+  width: 100%;                 /* Faz a barra ocupar toda a largura disponível */
+  padding: 10px;               /* Espaçamento interno */
+  border: 1px solid #ccc;      /* Borda fina e cinza */
+  border-radius: 6px;          /* Bordas arredondadas */
+  outline: none;               /* Remove a borda azul padrão */
+  height: 25px;                /* Mantém mesma altura do outro input */
+}
+
+/* Agrupa input, botão e pesquisa na mesma linha */
+.task-bar {
+  display: flex;       /* Coloca todos os elementos na mesma linha */
+  gap: 10px;           /* Espaço entre input, botão e pesquisa */
+  width: 100%;         /* Ocupa toda a largura disponível */
+  margin-bottom: 15px; /* Espaço abaixo da barra */
+  position: sticky;  /* mantém fixo */
+  top: 0;            /* fixa no topo da tela */
+  background: #f9f9f9; /* cor de fundo para não ficar transparente */
+  padding: 10px 0;
+  z-index: 10;       /* fica na frente dos outros elementos */
+}
+.task-bar input {
+  flex: 1;                   /* Faz os inputs ocuparem o mesmo espaço */
+  padding: 10px;             /* Espaçamento interno */
+  border-radius: 6px;        /* Bordas arredondadas */
+  border: 1px solid #ccc;    /* Borda fina e cinza */
+  outline: none;             /* Remove o contorno azul padrão */
+  height: 25px;              /* Mantém altura fixa */
+}
+
+.task-bar button {
+  width: 35px;               /* Largura fixa do botão */
+  height: 35px;              /* Mesma altura dos inputs */
+  background: #4CAF50;       /* Fundo verde */
+  color: white;              /* Texto branco */
+  border: none;              /* Remove borda */
+  border-radius: 6px;        /* Bordas arredondadas */
+  cursor: pointer;           /* Mãozinha ao passar */
+  transition: background 0.3s; /* Efeito suave */
+ 
+  
+}
+
+.task-bar button:hover {
+  background: #45a049;       /* Verde mais escuro no hover */
+}
+
+.task-bar #pesquisaInput { 
+  flex: 1;                   /* Faz a pesquisa ocupar mais espaço que os outros */
+  
+}

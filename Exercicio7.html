@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Aula 7</title>
+        <!-- <link rel="stylesheet" href="style-aula-7.css"> -->
+    </head>
+
+    <body style="background-color: bisque;">
+        <h2>Exercícios:<br>
+        01 - Modifique o campo para que seja text em vez de password.<br>
+        Adicione uma contagem de quantos caracteres foram digitados.</h2><br>
+        <h3>Resposta:</h3>
+
+        <h2>Digite sua palavra/senha:</h2>
+
+        <input type="text" id="campoSenha"
+        placeholder="Digite aqui...">
+        <p id="resultado">👉 Você digitou: </p>
+
+        <script>
+            const campo = document.getElementById("campoSenha");
+            const resultado = document.getElementById("resultado");
+
+            campo.addEventListener("keyup", function() {
+            let texto = campo.value;
+            resultado.textContent = "👉 Você digitou:" + texto  + "(Total: " + texto.length + "caracteres)";
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Aula 8</title>
+        <!-- <link rel="stylesheet" href="style-aula-8.css"> -->
+    </head>
+
+    <body style="background-color: black;">
+        <h2 style="color: antiquewhite;">AULA 8</h2>
+
+        <button class="botoes">Botão 1</button>
+        <button class="botoes">Botão 2</button>
+        <button class="botoes">Botão 3</button>
+
+        <script>
+            const botoes = document.querySelectorAll(".botoes");
+
+            botoes.forEach(function(botao){
+                botao.addEventListener("click",function(){
+                alert("Você clicou: " + botao.innerText);
+                });
+            });
+        </script>
+
+    </body>
+</html>

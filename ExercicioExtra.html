@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício Extra</title>
+    <link rel="stylesheet" href="style-extra.css">
+</head>
+<body>
+    <header>
+        <h1>Exercício Extra</h1>
+        <p>
+            Nome: <strong>Nicolas Gonçalves de Souza</strong> |
+            Turma: <strong>Noite</strong> | Sala: <strong>3</strong> |
+            Data: <strong>27-08-2025</strong>
+        </p>
+    </header>
+
+    <main>
+        <section class="instrucao">
+            <p>Escolha uma cor abaixo para alterar o fundo da página:</p>
+        </section>
+
+        <section class="exercicio">
+            <h2>👩‍💻 Instruções do Exercício</h2>
+            <ul>
+                <li>Mini painel com 10 cores;</li>
+                <li>Crie um mini painel com 3 botões: Cinza, Verde, Vermelho</li>
+                <li>Ao clicar, mude a cor de fundo da página para a cor do botão</li>
+                <li>Use 'addEventListener' e tudo o que aprendeu até agora</li>
+                <li>Ao passar o mouse em cima de qualquer botão, destaque-o com uma borda</li>
+            </ul>
+        </section>
+
+        <div class="botoes">
+            <button class="cinza" onclick="mudarCor('gray')">Cinza</button>
+            <button class="verde" onclick="mudarCor('green')">Verde</button>
+            <button class="vermelho" onclick="mudarCor('red')">Vermelho</button>
+            <button class="azul" onclick="mudarCor('blue')">Azul</button>
+            <button class="amarelo" onclick="mudarCor('gold')">Amarelo</button>
+            <button class="roxo" onclick="mudarCor('purple')">Roxo</button>
+            <button class="laranja" onclick="mudarCor('orange')">Laranja</button>
+            <button class="ciano" onclick="mudarCor('cyan')">Ciano</button>
+            <button class="rosa" onclick="mudarCor('pink')">Rosa</button>
+            <button class="preto" onclick="mudarCor('black')">Preto</button>
+            <button class="resetar" onclick="resetarCor()">Resetar</button>
+        </div>
+    </main>
+
+    <script>
+        function mudarCor(cor) {
+            document.body.style.backgroundColor = cor;
+            
+            // 🔹 Ajusta cor do texto conforme fundo
+            const textoClaro = ["black", "purple", "blue", "red", "green", "gray"];
+            if (textoClaro.includes(cor)) {
+                document.body.style.color = "white";
+            } else {
+                document.body.style.color = "black";
+            }
+        }
+
+        function resetarCor() {
+            document.body.style.backgroundColor = "#0d1b2a";
+            document.body.style.color = "white";
+        }
+    </script>
+</body>
+</html>

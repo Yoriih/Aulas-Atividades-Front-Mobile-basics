@@ -1,0 +1,66 @@
+/*Estilo base*/
+body {
+    background-color: #0d1b2a; /* cor inicial */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Cabeçalho tipo régua*/
+header {
+    background-color: #222;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 🔹 Caixa de instrução */
+.instrucao {
+    background-color: transparent; /* não fica branco nunca */
+    padding: 20px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+.exercicio {
+    background-color: transparent;
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+    
+}
+
+/* 🔹 Botões */
+.botoes {
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    background-color: white; /* fundo branco por padrão */
+    color: black;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* 🔹 Efeito hover: mostra a cor correspondente */
+button.cinza:hover { background-color: gray; color: white; }
+button.verde:hover { background-color: green; color: white; }
+button.vermelho:hover { background-color: red; color: white; }
+button.azul:hover { background-color: blue; color: white; }
+button.amarelo:hover { background-color: gold; color: black; }
+button.roxo:hover { background-color: purple; color: white; }
+button.laranja:hover { background-color: orange; color: black; }
+button.ciano:hover { background-color: cyan; color: black; }
+button.rosa:hover { background-color: pink; color: black; }
+button.preto:hover { background-color: black; color: white; }
+button.resetar:hover { background-color: dodgerblue; color: white; }

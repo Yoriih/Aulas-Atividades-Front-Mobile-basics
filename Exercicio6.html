@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício 6 - Manipulação de Eventos (Continuação)</title>
+        <!-- <link rel="stylesheet" href="style-aula-6.css"> -->
+    </head>
+
+    <body style="background-color: black;">
+
+        <h2 style="color: white;">
+            Exercício<br>
+            01 - Crie um campo 'input' do tipo text que, ao mudar o valor (e sair do campo), mostre o que foi digitado:
+        </h2>
+        <h3 style="color: white;">Resposta:</h3>
+
+        <!-- Não e necessário fechar o <input> -->
+        <!-- type="text" e usado para definir o tipo que será aceito pelo input -->
+        <!-- placeholder="" e usado para inserir um texto indicativo dentro da caixa do input --> 
+
+        <input type="text" onchange="revelar(this.value)" placeholder="Digite um texto">
+
+        <p id="dados" style="color: white;"></p>
+
+        <script>
+            function revelar(MostrarDados){
+                document.getElementById("dados").innerText =
+                "Você digitou: " + MostrarDados
+            }
+        </script>
+
+    </body>
+    
+</html>

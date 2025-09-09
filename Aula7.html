@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Aula 7</title>
+        <!-- <link rel="stylesheet" href="style-aula-7.css"> -->
+    </head>
+
+    <body>
+
+       <!-- <h2> Digite sua palavra/senha:</h2>
+
+        <input type="password" id="campoSenha"
+        placeholder="Digite aqui...">
+
+        <p id="resultado">👉 Você digitou: </p>
+
+        <script>
+            const campo = document.getElementById("campoSenha");
+            const resultado = document.getElementById("resultado");
+
+            // Captura o valor digitado a cada tecla liberada 
+            campo.addEventListener("keyup", function() {
+                let texto = campo.value;
+                resultado.textContent = "Você digitou:" + texto;
+            });
+        </script>
+        -->
+         
+         <button id="botao">Clique aqui</button>
+         
+         <script>
+            const botao = document.getElementById("botao");
+            botao.addEventListener("click", function() {
+                alert("Esse é o evento click usando addEventLsitener")
+            });
+         </script>
+
+        <H2>---------------------------------------------------------------------------</H2>
+        <!--
+        <form onsubmit="return validarFormulario()">
+            <input type="text" id="nome" placeholder=
+            "Digite seu nome">
+            <button type="submit">Enviar</button>
+        </form>
+
+        <script>
+        function validarFormulario(){
+            const nome = document.getElementById("nome").value;
+            if (nome === "") {
+            alert("Por favor, preencha o nome.");
+            return false; // cancela envio
+            }}
+            alert("Formulário enviado com sucesso!");
+            return true;
+        </script>
+        -->
+
+    </body>
+</html>
